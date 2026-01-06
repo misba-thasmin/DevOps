@@ -1,0 +1,566 @@
+Microsoft Windows [Version 10.0.26200.7462]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\Admin\Desktop\DevOps>git init
+Initialized empty Git repository in C:/Users/Admin/Desktop/DevOps/.git/
+
+C:\Users\Admin\Desktop\DevOps>code .
+
+C:\Users\Admin\Desktop\DevOps>git add config.js
+
+C:\Users\Admin\Desktop\DevOps>git commit -m "first commit"
+[master (root-commit) 53f53f2] first commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 config.js
+
+C:\Users\Admin\Desktop\DevOps>git lg
+git: 'lg' is not a git command. See 'git --help'.
+
+The most similar command is
+        log
+
+C:\Users\Admin\Desktop\DevOps>git log
+commit 53f53f2b0511d4e7e8d04698bfe07c4f76760d0c (HEAD -> master)
+Author: misba-thasmin <thasminmisbha@gmail.com>
+Date:   Mon Jan 5 21:26:13 2026 +0530
+
+    first commit
+
+C:\Users\Admin\Desktop\DevOps>git branch new-branch
+
+C:\Users\Admin\Desktop\DevOps>git branch
+* master
+  new-branch
+
+C:\Users\Admin\Desktop\DevOps>git checkout new-branch
+Switched to branch 'new-branch'
+
+C:\Users\Admin\Desktop\DevOps>git add config.js
+
+C:\Users\Admin\Desktop\DevOps>git commit -m "second commit"
+[new-branch 3cec210] second commit
+ 1 file changed, 1 insertion(+)
+
+C:\Users\Admin\Desktop\DevOps>git log --all --graph
+* commit 3cec210c3bb9a5821f1c34f5d9b7ae963fefa453 (HEAD -> new-branch)
+| Author: misba-thasmin <thasminmisbha@gmail.com>
+| Date:   Mon Jan 5 21:29:26 2026 +0530
+|
+|     second commit
+|
+* commit 53f53f2b0511d4e7e8d04698bfe07c4f76760d0c (master)
+  Author: misba-thasmin <thasminmisbha@gmail.com>
+  Date:   Mon Jan 5 21:26:13 2026 +0530
+
+      first commit
+
+C:\Users\Admin\Desktop\DevOps>git branch b1
+
+C:\Users\Admin\Desktop\DevOps>git branch
+  b1
+  master
+* new-branch
+
+C:\Users\Admin\Desktop\DevOps>git checkout b1
+Switched to branch 'b1'
+
+C:\Users\Admin\Desktop\DevOps>git add config.js
+
+C:\Users\Admin\Desktop\DevOps>git commit -m "third commit"
+[b1 59786c4] third commit
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+C:\Users\Admin\Desktop\DevOps>git branch
+* b1
+  master
+  new-branch
+
+C:\Users\Admin\Desktop\DevOps>git log --all --graph
+* commit 59786c4d4fd505639a974514a0ef48db589de175 (HEAD -> b1)
+| Author: misba-thasmin <thasminmisbha@gmail.com>
+| Date:   Mon Jan 5 21:32:12 2026 +0530
+|
+|     third commit
+|
+* commit 3cec210c3bb9a5821f1c34f5d9b7ae963fefa453 (new-branch)
+| Author: misba-thasmin <thasminmisbha@gmail.com>
+| Date:   Mon Jan 5 21:29:26 2026 +0530
+|
+|     second commit
+|
+* commit 53f53f2b0511d4e7e8d04698bfe07c4f76760d0c (master)
+  Author: misba-thasmin <thasminmisbha@gmail.com>
+  Date:   Mon Jan 5 21:26:13 2026 +0530
+
+      first commit
+
+C:\Users\Admin\Desktop\DevOps>git checkout new-branch
+Switched to branch 'new-branch'
+
+C:\Users\Admin\Desktop\DevOps>git merge master
+Already up to date.
+
+C:\Users\Admin\Desktop\DevOps>git log
+commit 3cec210c3bb9a5821f1c34f5d9b7ae963fefa453 (HEAD -> new-branch)
+Author: misba-thasmin <thasminmisbha@gmail.com>
+Date:   Mon Jan 5 21:29:26 2026 +0530
+
+    second commit
+
+commit 53f53f2b0511d4e7e8d04698bfe07c4f76760d0c (master)
+Author: misba-thasmin <thasminmisbha@gmail.com>
+Date:   Mon Jan 5 21:26:13 2026 +0530
+
+    first commit
+
+C:\Users\Admin\Desktop\DevOps>git merge new-branch
+Already up to date.
+
+C:\Users\Admin\Desktop\DevOps>git log
+commit 3cec210c3bb9a5821f1c34f5d9b7ae963fefa453 (HEAD -> new-branch)
+Author: misba-thasmin <thasminmisbha@gmail.com>
+Date:   Mon Jan 5 21:29:26 2026 +0530
+
+    second commit
+
+commit 53f53f2b0511d4e7e8d04698bfe07c4f76760d0c (master)
+Author: misba-thasmin <thasminmisbha@gmail.com>
+Date:   Mon Jan 5 21:26:13 2026 +0530
+
+    first commit
+
+C:\Users\Admin\Desktop\DevOps>git merge main
+merge: main - not something we can merge
+
+C:\Users\Admin\Desktop\DevOps>git log
+commit 3cec210c3bb9a5821f1c34f5d9b7ae963fefa453 (HEAD -> new-branch)
+Author: misba-thasmin <thasminmisbha@gmail.com>
+Date:   Mon Jan 5 21:29:26 2026 +0530
+
+    second commit
+
+commit 53f53f2b0511d4e7e8d04698bfe07c4f76760d0c (master)
+Author: misba-thasmin <thasminmisbha@gmail.com>
+Date:   Mon Jan 5 21:26:13 2026 +0530
+
+    first commit
+
+C:\Users\Admin\Desktop\DevOps>git config --global user.name "misba-thasmin"
+
+C:\Users\Admin\Desktop\DevOps>git config --global user.email "thasminmisbha@gmail.com"
+
+C:\Users\Admin\Desktop\DevOps>git log --all --graph
+* commit 59786c4d4fd505639a974514a0ef48db589de175 (b1)
+| Author: misba-thasmin <thasminmisbha@gmail.com>
+| Date:   Mon Jan 5 21:32:12 2026 +0530
+|
+|     third commit
+|
+* commit 3cec210c3bb9a5821f1c34f5d9b7ae963fefa453 (HEAD -> new-branch)
+| Author: misba-thasmin <thasminmisbha@gmail.com>
+| Date:   Mon Jan 5 21:29:26 2026 +0530
+|
+|     second commit
+|
+* commit 53f53f2b0511d4e7e8d04698bfe07c4f76760d0c (master)
+  Author: misba-thasmin <thasminmisbha@gmail.com>
+  Date:   Mon Jan 5 21:26:13 2026 +0530
+
+      first commit
+
+C:\Users\Admin\Desktop\DevOps>git checkout b1
+Switched to branch 'b1'
+
+C:\Users\Admin\Desktop\DevOps>git merge main
+merge: main - not something we can merge
+
+C:\Users\Admin\Desktop\DevOps>git log
+commit 59786c4d4fd505639a974514a0ef48db589de175 (HEAD -> b1)
+Author: misba-thasmin <thasminmisbha@gmail.com>
+Date:   Mon Jan 5 21:32:12 2026 +0530
+
+    third commit
+
+commit 3cec210c3bb9a5821f1c34f5d9b7ae963fefa453 (new-branch)
+Author: misba-thasmin <thasminmisbha@gmail.com>
+Date:   Mon Jan 5 21:29:26 2026 +0530
+
+    second commit
+
+commit 53f53f2b0511d4e7e8d04698bfe07c4f76760d0c (master)
+Author: misba-thasmin <thasminmisbha@gmail.com>
+Date:   Mon Jan 5 21:26:13 2026 +0530
+
+    first commit
+
+C:\Users\Admin\Desktop\DevOps>git merge master
+Already up to date.
+
+C:\Users\Admin\Desktop\DevOps>git log
+commit 59786c4d4fd505639a974514a0ef48db589de175 (HEAD -> b1)
+Author: misba-thasmin <thasminmisbha@gmail.com>
+Date:   Mon Jan 5 21:32:12 2026 +0530
+
+    third commit
+
+commit 3cec210c3bb9a5821f1c34f5d9b7ae963fefa453 (new-branch)
+Author: misba-thasmin <thasminmisbha@gmail.com>
+Date:   Mon Jan 5 21:29:26 2026 +0530
+
+    second commit
+
+commit 53f53f2b0511d4e7e8d04698bfe07c4f76760d0c (master)
+Author: misba-thasmin <thasminmisbha@gmail.com>
+Date:   Mon Jan 5 21:26:13 2026 +0530
+
+    first commit
+
+C:\Users\Admin\Desktop\DevOps>git log --all --graph
+* commit 59786c4d4fd505639a974514a0ef48db589de175 (HEAD -> b1)
+| Author: misba-thasmin <thasminmisbha@gmail.com>
+| Date:   Mon Jan 5 21:32:12 2026 +0530
+|
+|     third commit
+|
+* commit 3cec210c3bb9a5821f1c34f5d9b7ae963fefa453 (new-branch)
+| Author: misba-thasmin <thasminmisbha@gmail.com>
+| Date:   Mon Jan 5 21:29:26 2026 +0530
+|
+|     second commit
+|
+* commit 53f53f2b0511d4e7e8d04698bfe07c4f76760d0c (master)
+  Author: misba-thasmin <thasminmisbha@gmail.com>
+  Date:   Mon Jan 5 21:26:13 2026 +0530
+
+      first commit
+
+C:\Users\Admin\Desktop\DevOps>git remote add origin https://github.com/misba-thasmin/DEvOPs-projewct.git
+
+C:\Users\Admin\Desktop\DevOps>git push origin
+fatal: The current branch b1 has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin b1
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+C:\Users\Admin\Desktop\DevOps>git push --set-upstream origin b1
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (9/9), 728 bytes | 145.00 KiB/s, done.
+Total 9 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote:
+remote: Create a pull request for 'b1' on GitHub by visiting:
+remote:      https://github.com/misba-thasmin/DEvOPs-projewct/pull/new/b1
+remote:
+To https://github.com/misba-thasmin/DEvOPs-projewct.git
+ * [new branch]      b1 -> b1
+branch 'b1' set up to track 'origin/b1'.
+
+C:\Users\Admin\Desktop\DevOps>git push -u origin b1
+branch 'b1' set up to track 'origin/b1'.
+Everything up-to-date
+
+C:\Users\Admin\Desktop\DevOps>git status
+On branch b1
+Your branch is up to date with 'origin/b1'.
+
+nothing to commit, working tree clean
+
+C:\Users\Admin\Desktop\DevOps>git merge main
+merge: main - not something we can merge
+
+C:\Users\Admin\Desktop\DevOps>git log
+commit 59786c4d4fd505639a974514a0ef48db589de175 (HEAD -> b1, origin/b1)
+Author: misba-thasmin <thasminmisbha@gmail.com>
+Date:   Mon Jan 5 21:32:12 2026 +0530
+
+    third commit
+
+commit 3cec210c3bb9a5821f1c34f5d9b7ae963fefa453 (new-branch)
+Author: misba-thasmin <thasminmisbha@gmail.com>
+Date:   Mon Jan 5 21:29:26 2026 +0530
+
+    second commit
+
+commit 53f53f2b0511d4e7e8d04698bfe07c4f76760d0c (master)
+Author: misba-thasmin <thasminmisbha@gmail.com>
+Date:   Mon Jan 5 21:26:13 2026 +0530
+
+    first commit
+
+C:\Users\Admin\Desktop\DevOps>git log --all --graph
+* commit 59786c4d4fd505639a974514a0ef48db589de175 (HEAD -> b1, origin/b1)
+| Author: misba-thasmin <thasminmisbha@gmail.com>
+| Date:   Mon Jan 5 21:32:12 2026 +0530
+|
+|     third commit
+|
+* commit 3cec210c3bb9a5821f1c34f5d9b7ae963fefa453 (new-branch)
+| Author: misba-thasmin <thasminmisbha@gmail.com>
+| Date:   Mon Jan 5 21:29:26 2026 +0530
+|
+|     second commit
+|
+* commit 53f53f2b0511d4e7e8d04698bfe07c4f76760d0c (master)
+  Author: misba-thasmin <thasminmisbha@gmail.com>
+  Date:   Mon Jan 5 21:26:13 2026 +0530
+
+      first commit
+
+C:\Users\Admin\Desktop\DevOps>git branch b2
+
+C:\Users\Admin\Desktop\DevOps>git checkout b2
+Switched to branch 'b2'
+
+C:\Users\Admin\Desktop\DevOps>git add new.js
+
+C:\Users\Admin\Desktop\DevOps>git commit -m "new file "
+[b2 73cb8c4] new file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 new.js
+
+C:\Users\Admin\Desktop\DevOps>git branch
+  b1
+* b2
+  master
+  new-branch
+
+C:\Users\Admin\Desktop\DevOps>git checkout master
+Switched to branch 'master'
+
+C:\Users\Admin\Desktop\DevOps>git log
+commit 53f53f2b0511d4e7e8d04698bfe07c4f76760d0c (HEAD -> master)
+Author: misba-thasmin <thasminmisbha@gmail.com>
+Date:   Mon Jan 5 21:26:13 2026 +0530
+
+    first commit
+
+C:\Users\Admin\Desktop\DevOps>git merge new-branch
+Updating 53f53f2..3cec210
+Fast-forward
+ config.js | 1 +
+ 1 file changed, 1 insertion(+)
+
+C:\Users\Admin\Desktop\DevOps>git log
+commit 3cec210c3bb9a5821f1c34f5d9b7ae963fefa453 (HEAD -> master, new-branch)
+Author: misba-thasmin <thasminmisbha@gmail.com>
+Date:   Mon Jan 5 21:29:26 2026 +0530
+
+    second commit
+
+commit 53f53f2b0511d4e7e8d04698bfe07c4f76760d0c
+Author: misba-thasmin <thasminmisbha@gmail.com>
+Date:   Mon Jan 5 21:26:13 2026 +0530
+
+    first commit
+
+C:\Users\Admin\Desktop\DevOps>git log --all --graph
+* commit 73cb8c49df15fb3d32c0a3577a9bf4d29cd64892 (b2)
+| Author: misba-thasmin <thasminmisbha@gmail.com>
+| Date:   Mon Jan 5 21:58:39 2026 +0530
+|
+|     new file
+|
+* commit 59786c4d4fd505639a974514a0ef48db589de175 (origin/b1, b1)
+| Author: misba-thasmin <thasminmisbha@gmail.com>
+| Date:   Mon Jan 5 21:32:12 2026 +0530
+|
+|     third commit
+|
+* commit 3cec210c3bb9a5821f1c34f5d9b7ae963fefa453 (HEAD -> master, new-branch)
+| Author: misba-thasmin <thasminmisbha@gmail.com>
+| Date:   Mon Jan 5 21:29:26 2026 +0530
+|
+|     second commit
+|
+* commit 53f53f2b0511d4e7e8d04698bfe07c4f76760d0c
+  Author: misba-thasmin <thasminmisbha@gmail.com>
+  Date:   Mon Jan 5 21:26:13 2026 +0530
+
+      first commit
+
+C:\Users\Admin\Desktop\DevOps>git log --graph
+* commit 3cec210c3bb9a5821f1c34f5d9b7ae963fefa453 (HEAD -> master, new-branch)
+| Author: misba-thasmin <thasminmisbha@gmail.com>
+| Date:   Mon Jan 5 21:29:26 2026 +0530
+|
+|     second commit
+|
+* commit 53f53f2b0511d4e7e8d04698bfe07c4f76760d0c
+  Author: misba-thasmin <thasminmisbha@gmail.com>
+  Date:   Mon Jan 5 21:26:13 2026 +0530
+
+      first commit
+
+C:\Users\Admin\Desktop\DevOps>git merge b1
+Updating 3cec210..59786c4
+Fast-forward
+ config.js | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+C:\Users\Admin\Desktop\DevOps>git log
+commit 59786c4d4fd505639a974514a0ef48db589de175 (HEAD -> master, origin/b1, b1)
+Author: misba-thasmin <thasminmisbha@gmail.com>
+Date:   Mon Jan 5 21:32:12 2026 +0530
+
+    third commit
+
+commit 3cec210c3bb9a5821f1c34f5d9b7ae963fefa453 (new-branch)
+Author: misba-thasmin <thasminmisbha@gmail.com>
+Date:   Mon Jan 5 21:29:26 2026 +0530
+
+    second commit
+
+commit 53f53f2b0511d4e7e8d04698bfe07c4f76760d0c
+Author: misba-thasmin <thasminmisbha@gmail.com>
+Date:   Mon Jan 5 21:26:13 2026 +0530
+
+    first commit
+
+C:\Users\Admin\Desktop\DevOps>git log --all --graph
+* commit 73cb8c49df15fb3d32c0a3577a9bf4d29cd64892 (b2)
+| Author: misba-thasmin <thasminmisbha@gmail.com>
+| Date:   Mon Jan 5 21:58:39 2026 +0530
+|
+|     new file
+|
+* commit 59786c4d4fd505639a974514a0ef48db589de175 (HEAD -> master, origin/b1, b1)
+| Author: misba-thasmin <thasminmisbha@gmail.com>
+| Date:   Mon Jan 5 21:32:12 2026 +0530
+|
+|     third commit
+|
+* commit 3cec210c3bb9a5821f1c34f5d9b7ae963fefa453 (new-branch)
+| Author: misba-thasmin <thasminmisbha@gmail.com>
+| Date:   Mon Jan 5 21:29:26 2026 +0530
+|
+|     second commit
+|
+* commit 53f53f2b0511d4e7e8d04698bfe07c4f76760d0c
+  Author: misba-thasmin <thasminmisbha@gmail.com>
+  Date:   Mon Jan 5 21:26:13 2026 +0530
+
+      first commit
+
+C:\Users\Admin\Desktop\DevOps>git merge b2
+Updating 59786c4..73cb8c4
+Fast-forward
+ new.js | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 new.js
+
+C:\Users\Admin\Desktop\DevOps>git log
+commit 73cb8c49df15fb3d32c0a3577a9bf4d29cd64892 (HEAD -> master, b2)
+Author: misba-thasmin <thasminmisbha@gmail.com>
+Date:   Mon Jan 5 21:58:39 2026 +0530
+
+    new file
+
+commit 59786c4d4fd505639a974514a0ef48db589de175 (origin/b1, b1)
+Author: misba-thasmin <thasminmisbha@gmail.com>
+Date:   Mon Jan 5 21:32:12 2026 +0530
+
+    third commit
+
+commit 3cec210c3bb9a5821f1c34f5d9b7ae963fefa453 (new-branch)
+Author: misba-thasmin <thasminmisbha@gmail.com>
+Date:   Mon Jan 5 21:29:26 2026 +0530
+
+    second commit
+
+commit 53f53f2b0511d4e7e8d04698bfe07c4f76760d0c
+Author: misba-thasmin <thasminmisbha@gmail.com>
+Date:   Mon Jan 5 21:26:13 2026 +0530
+
+    first commit
+
+C:\Users\Admin\Desktop\DevOps>git log --all --graph
+* commit 73cb8c49df15fb3d32c0a3577a9bf4d29cd64892 (HEAD -> master, b2)
+| Author: misba-thasmin <thasminmisbha@gmail.com>
+| Date:   Mon Jan 5 21:58:39 2026 +0530
+|
+|     new file
+|
+* commit 59786c4d4fd505639a974514a0ef48db589de175 (origin/b1, b1)
+| Author: misba-thasmin <thasminmisbha@gmail.com>
+| Date:   Mon Jan 5 21:32:12 2026 +0530
+|
+|     third commit
+|
+* commit 3cec210c3bb9a5821f1c34f5d9b7ae963fefa453 (new-branch)
+| Author: misba-thasmin <thasminmisbha@gmail.com>
+| Date:   Mon Jan 5 21:29:26 2026 +0530
+|
+|     second commit
+|
+* commit 53f53f2b0511d4e7e8d04698bfe07c4f76760d0c
+  Author: misba-thasmin <thasminmisbha@gmail.com>
+  Date:   Mon Jan 5 21:26:13 2026 +0530
+
+      first commit
+
+C:\Users\Admin\Desktop\DevOps>git status
+On branch master
+nothing to commit, working tree clean
+
+C:\Users\Admin\Desktop\DevOps>git add new.js
+
+C:\Users\Admin\Desktop\DevOps>git merge b2
+Already up to date.
+
+C:\Users\Admin\Desktop\DevOps>git log
+commit 73cb8c49df15fb3d32c0a3577a9bf4d29cd64892 (HEAD -> master, b2)
+Author: misba-thasmin <thasminmisbha@gmail.com>
+Date:   Mon Jan 5 21:58:39 2026 +0530
+
+    new file
+
+commit 59786c4d4fd505639a974514a0ef48db589de175 (origin/b1, b1)
+Author: misba-thasmin <thasminmisbha@gmail.com>
+Date:   Mon Jan 5 21:32:12 2026 +0530
+
+    third commit
+
+commit 3cec210c3bb9a5821f1c34f5d9b7ae963fefa453 (new-branch)
+Author: misba-thasmin <thasminmisbha@gmail.com>
+Date:   Mon Jan 5 21:29:26 2026 +0530
+
+    second commit
+
+commit 53f53f2b0511d4e7e8d04698bfe07c4f76760d0c
+Author: misba-thasmin <thasminmisbha@gmail.com>
+Date:   Mon Jan 5 21:26:13 2026 +0530
+
+    first commit
+
+C:\Users\Admin\Desktop\DevOps>git log --all --graph
+* commit 73cb8c49df15fb3d32c0a3577a9bf4d29cd64892 (HEAD -> master, b2)
+| Author: misba-thasmin <thasminmisbha@gmail.com>
+| Date:   Mon Jan 5 21:58:39 2026 +0530
+|
+|     new file
+|
+* commit 59786c4d4fd505639a974514a0ef48db589de175 (origin/b1, b1)
+| Author: misba-thasmin <thasminmisbha@gmail.com>
+| Date:   Mon Jan 5 21:32:12 2026 +0530
+|
+|     third commit
+|
+* commit 3cec210c3bb9a5821f1c34f5d9b7ae963fefa453 (new-branch)
+| Author: misba-thasmin <thasminmisbha@gmail.com>
+| Date:   Mon Jan 5 21:29:26 2026 +0530
+|
+|     second commit
+|
+* commit 53f53f2b0511d4e7e8d04698bfe07c4f76760d0c
+  Author: misba-thasmin <thasminmisbha@gmail.com>
+  Date:   Mon Jan 5 21:26:13 2026 +0530
+
+      first commit
+
+C:\Users\Admin\Desktop\DevOps>^A
