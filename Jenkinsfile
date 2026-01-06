@@ -4,19 +4,19 @@ pipeline {
     stages {
         stage('Setup Python Environment') {
             steps {
-                sh '''
+                bat '''
                 python3 --version
                 python3 -m venv venv
                 . venv/bin/activate
                 pip install --upgrade pip
-                pip install -r requirements.txt
+                venv\\Scripts\\activate && pip install -r requirements.txt
                 '''
             }
         }
 
         stage('Run Tests') {
             steps {
-                sh '''
+                bat '''
                 . venv/bin/activate
                 pytest
                 '''
